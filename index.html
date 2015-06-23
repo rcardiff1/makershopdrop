@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+  <title>ShopDrop</title>
+
+
+</head>
+<body>
+
+  <div class="container">
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">ShopDrop.com</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li id="books-button"><button>Books</button></li>
+            <li id="music-button"><button>Music</button></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div><!--/.container-fluid -->
+    </nav>
+  </div>
+
+  <!-- Start Book Product Container  -->
+  <div class="container">
+  <div id="page-container">
+      <h1>ShopDrop.com</h1>
+        <div id="Product" class="col-md-12 item-padding product-style">
+          <h2>Products:</h2>
+        </div>
+      <div class="product-container"></div>
+    </div>
+  </div>
+
+
+
+  <footer>
+    <div>All Rights Reserved: DropShop.com</div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script type="text/template" id='product-template'>
+
+      <div id="product-key" class="col-md-12 item-padding product-style">
+          <div class="row">
+          <!--   Product 1 -->
+            <div class="product-type">
+              <!-- Product Image -->
+                <div class="col-md-2">
+                    <div class="product-image"></div>
+                </div>
+            <!--   Product Information -->
+                <div class="col-md-8 information-area">
+                    <div class="information-container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="product-name">
+                                  <span class="maintitle"></span>
+                                  <span class="subtitle"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="product-category"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="product-description"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="product-review"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 price-container">
+                    <div class="col-md-6">
+                        <h4 class="price-label">Price:</h4>
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="product-price"></h4>
+                    </div>
+                </div>
+             </div>
+          </div>
+      </div>
+  </script>
+  <script>
+
+  var book1, book2, book3, music1, music2, music3, music4;
+
+  book1 = {
+    id: 'book1',
+    image: '<img src="https://encrypted.google.com/books/content/images/frontcover/rtBru4Nrpj8C?fife=w300-rw" alt="The Strongman">',
+    maintitle: 'Obama:',
+    subtitle: 'From Promise To Power',
+    category: 'Biography',
+    description: "Barack Obama is arguably the most dynamic political figure to grace the American stage since John F. Kennedy. His meteoric rise from promise to power has stunned even the cynics and inspired a legion of devout followers.",
+    review: '4-star',
+    price: '$1.00'
+  }
+
+  book2 = {
+    id: 'book2',
+    image: '<img src="http://ecx.images-amazon.com/images/I/51yVAs8-AiL.jpg" alt="The Strongman">',
+    maintitle: 'The Man Without a Face:',
+    subtitle: 'The Unlikely Rise of Vladimir Putin',
+    category: 'Biography',
+    description: "In 1999, the “Family” surrounding Boris Yeltsin went looking for a successor to the ailing and increasingly unpopular president.",
+    review: '4-star',
+    price: '$20.00'
+  }
+
+  book3 = {
+    id: 'book3',
+    image: '<img src="http://img2.imagesbn.com/p/9781846883187_p0_v1_s260x420.JPG" alt="The Strongman">',
+    maintitle: 'Angela Merkel:',
+    subtitle: 'The Authorized Biography',
+    category: 'Biography',
+    description: "n authorized biography of one of the most powerful women in the world sheds light on the person behind the politician   With the Eurozone engulfed in an unprecedented crisis, one political figure looms largest of all, Angela Merkel, the leader of its most powerful economy.",
+    review: '3-star',
+    price: '$30.00'
+  }
+
+  music1 = {
+    id: 'music1',
+    image: '<img src="http://ecx.images-amazon.com/images/I/71imizVlgVL._SX522_.jpg" alt="Debussy">',
+    maintitle: 'Claire De Lune:',
+    subtitle: 'Debussy Favorites',
+    category: 'Classical',
+    description: 'The bomb classical music that will make you cry.',
+    review: '5-star',
+    price: '$14.32'
+  }
+
+  music2 = {
+    id: 'music2',
+    image: '  <img src="http://smoothjazztherapy.typepad.com/.a/6a00d8341d465453ef01b7c6fe04cd970b-pi" alt="The Strongman">',
+    maintitle: 'Brazilian Nights:',
+    subtitle: 'The New Album For Kenny G',
+    category: 'Jazz',
+    description: 'The best Smooth Jazz Album... pull his hari and see what happens.',
+    review: '4-star',
+    price: '$20.00'
+  }
+
+  music3 = {
+    id: 'music3',
+    image: '<img src="http://ecx.images-amazon.com/images/I/41GARM14RCL.jpg" alt="The Strongman">',
+    maintitle: 'Essential Mozart',
+    subtitle: '',
+    category: 'Classical',
+    description: 'Old as balls.',
+    review: '5-star',
+    price: '$30.00'
+  }
+
+  music4 = {
+    id: 'music4',
+    image: '<img src="http://ecx.images-amazon.com/images/I/51lHiavbTuL._AA160_.jpg" alt="The Strongman">',
+    maintitle: 'Ghost Stories',
+    subtitle: 'ColdPlay',
+    category: 'Pop',
+    description: 'Soooooo Good.',
+    review: '4.5-star',
+    price: '$11.50'
+  }
+
+
+  var addProductBooks = function (books) {
+    var $itemEl = $('<div>').attr('id', books.id).addClass('col-md-12').addClass('item-padding').addClass('product-style');
+    var $row = $('<div class="row product-style">');
+    $itemEl.append($row);
+    // $('.product-container').empty();
+    $('.product-container').append($itemEl);
+    $itemEl.append($('<div>').addClass(books.category+'-image').html(books.image));
+    $itemEl.append($('<div>').addClass(books.category+'-maintitle').text(books.maintitle));
+    $itemEl.append($('<div>').addClass(books.category+'-subtitle').text(books.subtitle));
+    $itemEl.append($('<div>').addClass(books.category+'-category').text(books.category));
+    $itemEl.append($('<div>').addClass(books.category+'-description').text(books.description));
+    $itemEl.append($('<div>').addClass(books.category+'-review').text(books.review));
+    $itemEl.append($('<div>').addClass(books.category+'-price').text(books.price));
+  };
+
+  var books = [book1,book2,book3];
+
+  $('#books-button').click(function(){
+    books.forEach(function(books){
+      addProductBooks(books);
+    })
+  });
+
+
+  var addProductMusic = function (music) {
+    var $itemEl = $('<div>').attr('id', music.id).addClass('col-md-12').addClass('item-padding').addClass('product-style');
+    var $row = $('<div class="row product-style">');
+    $itemEl.append($row);
+    // $('.product-container').empty();
+    $('.product-container').append($itemEl);
+    $itemEl.append($('<div>').addClass(music.category+'-image').html(music.image));
+    $itemEl.append($('<div>').addClass(music.category+'-maintitle').text(music.maintitle));
+    $itemEl.append($('<div>').addClass(music.category+'-subtitle').text(music.subtitle));
+    $itemEl.append($('<div>').addClass(music.category+'-category').text(music.category));
+    $itemEl.append($('<div>').addClass(music.category+'-description').text(music.description));
+    $itemEl.append($('<div>').addClass(music.category+'-review').text(music.review));
+    $itemEl.append($('<div>').addClass(music.category+'-price').text(music.price));
+  };
+
+
+  var music = [music1,music2,music3,music4];
+
+  $('#music-button').click(function(){
+    music.forEach(function(music){
+      addProductMusic(music);
+    })
+  });
+
+
+
+
+  </script>
+</body>
+</html>
